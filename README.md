@@ -1,28 +1,32 @@
-Full-Stack Node.js Docker Infrastructure
+# Containerized Full-Stack Application with Docker & Docker Compose
 This repository provides a containerization layer for full-stack applications. It is designed to orchestrate a Node.js frontend and backend using Docker and Docker Compose.
 
-🏗️ Project Structure
+## 🏗️ Project Structure
 The repository is organized to separate the infrastructure logic from the application source code:
 
-./myChatbot/ - Dedicated environment for the Frontend.
+```text
+├── backend/            # Dedicated environment for the Backend API
+├── myChatbot/          # Dedicated environment for the Frontend (Chatbot UI)
+├── docker-compose.yml  # Orchestration script managing networks, ports, & env variables
+└── README.md           # Project documentation
+```
 
-./backend/ - Dedicated environment for the Backend API .
+### How to Use
+Follow these steps to get your full-stack application up and running locally:
 
-docker-compose.yml - Orchestration script to manage networking, ports, and environment variables.
+Place your frontend files in the ```/myChatbot ``` folder.
 
-How to Use
+Place your backend files in the ``` /backend ``` folder.
 
-Place your frontend files in the /myChatbot folder.
-
-Place your backend files in the /backend folder.
-
-Configure API Keys:
+### Configure API Keys:
 
 ```export OPENROUTER_API_KEY=your_key_here```
 
-Run with Docker Compose:
+### Run with Docker Compose:
 
 ```docker-compose up --build```
+
+### Once the build completes and the services are healthy, you can access the application layers via your browser:
 
 Frontend: http://localhost:3000
 
